@@ -1,0 +1,16 @@
+[Unit]
+Description=Serviço de Upload
+
+[Service]
+ExecStart=/bin/node /upload/index.js
+
+WorkingDirectory=/upload/
+
+Restart=always
+RestartSec=10
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=upload
+
+[Install]
+WantedBy=multi-user.target
